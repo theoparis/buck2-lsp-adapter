@@ -1,14 +1,19 @@
 {
   "name": "buck2-lsp-adapter",
+  "dependenciesMeta": {
+    "which@6.0.0": {
+      "unplugged": true
+    }
+  },
   "description": "A buck2 lsp adapter for VSCode",
-  "version": "1.0.1",
-  "publisher": "PeerStudios",
+  "version": "1.0.0",
+  "publisher": "theoparis",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PeerStudios/buck2-lsp-adapter"
+    "url": "https://github.com/theoparis/buck2-lsp-adapter"
   },
   "engines": {
-    "vscode": "^1.82.0"
+    "vscode": "^1.107.0"
   },
   "categories": [
     "Programming Languages",
@@ -128,22 +133,23 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "pnpm build",
+    "vscode:prepublish": "yarn build",
     "build": "tsup --minify terser",
     "dev": "tsup --watch",
     "package": "vsce package --no-dependencies --pre-release",
     "vscode:publish": "vsce publish --no-dependencies --pre-release"
   },
   "devDependencies": {
-    "@types/node": "18.x",
-    "@types/vscode": "^1.82.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.3",
-    "@typescript-eslint/parser": "^6.7.3",
-    "@vscode/vsce": "^2.21.1",
-    "eslint": "^8.50.0",
-    "terser": "^5.20.0",
-    "tsup": "^7.2.0",
-    "typescript": "^5.2.2"
+    "@secretlint/secretlint-formatter-sarif": "^11.3.1",
+    "@secretlint/secretlint-rule-no-dotenv": "^11.3.1",
+    "@secretlint/secretlint-rule-preset-recommend": "^11.3.1",
+    "@types/node": "25.x",
+    "@types/vscode": "^1.107.0",
+    "@vscode/vsce": "^3.7.1",
+    "secretlint": "^11.3.1",
+    "terser": "^5.46.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "vscode-languageclient": "^9.0.1"
